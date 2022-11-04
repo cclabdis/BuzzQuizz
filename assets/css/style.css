@@ -1,8 +1,5 @@
 /* aqui vai o css de estilo dos cards e dos quizzes */
 
-body{
-    font-family: 'Roboto', sans-serif;
-}
 
 main{
     width: 100%;
@@ -118,3 +115,6 @@ section{
     align-items: center; 
 }
 
+#page1{
+    display: none;
+}

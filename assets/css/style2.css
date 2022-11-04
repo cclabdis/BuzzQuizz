@@ -1,0 +1,68 @@
+#page1{
+
+    width: 100vw;
+    height: 100vh;
+  
+}
+.aunt1{
+    color: #B9B9B9;
+    height: 107px;
+    width: 250px;
+    font-size: 20px;
+
+}
+.aunt2{
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 23px;
+    letter-spacing: 0em;
+   
+
+}
+
+.makeQuizz{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 20rem;
+    weight: 280px;
+    left: 194px;
+    top: 146px;
+
+    padding: 1rem;
+    border: 1px dashed #D5D5D5;
+    border-radius: 0.313rem;
+
+}
+.allQuizzes{
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 2rem;
+    
+    list-style: none;
+
+}
+
+.makeQuizz button {
+    padding: .25rem .5rem;
+    margin: .25rem 0;
+    font-size: 1.313rem;
+    color: red;
+    border: 0.1rem dashed red;
+    border-radius: 1rem;
+}
+
+
+.quiz {
+    display: inline-block;
+    position: relative;
+  }
+  .quiz p {
+    position: absolute;
+    top: 145px;
+    right: 20px;
+    font-size: 23px;
+    color: white;
+  }
