@@ -1,0 +1,118 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+main{
+    width: 100%;
+    height:100%;
+    margin: auto;
+}
+
+header{
+    width: 1440px;
+    height: 69px;
+    margin: auto;
+    background-color: #EC362D;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+}
+
+.header-title{
+    font-size: 37px;
+    font-weight: 700;
+    color: #fff;
+}
+
+nav{
+    width: 1440px;
+    height: 227px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
+    
+}
+
+.img-title{
+    width: auto;
+    position: absolute;
+    opacity: 0.6;
+}
+
+
+.quizz-title{
+    position: absolute;
+    font-size: 39px;
+    font-weight: 400;
+    color: #fff;
+}
+
+
+.img-question{
+    width: 330px;
+    height: 175px;
+}
+
+.question-title, .question-quizz, .question-answer{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    width: 1440px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #e5e5e5;
+}
+
+.question-quizz{
+    width: 759px;
+    height: 676px;
+    margin-top: 42px;
+    background-color: #fff;
+}
+
+.question-answer{
+    width: 688px;
+    height: 455px;
+    margin-top: 20px;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.question-title{
+    display: flex;
+    font-size: 23px;
+    font-weight: 700;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 688px;
+    height: 138px;
+    margin-top: 20px;
+    background-color: #434ca0;
+}
+
+.option1, .option2, .option3, .option4{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.text-answer{
+    font-size: 20px;
+    font-weight: 700;
+    align-items: center; 
+}
+
