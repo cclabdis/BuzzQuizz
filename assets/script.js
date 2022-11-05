@@ -64,3 +64,28 @@ function quizzTemplate(response){
 
     
 }
+
+function renderQuizzes(answer) {
+	const quizzList1 = answer.data;
+
+	console.log(quizzList1);
+
+	const quizzSpace = document.querySelector(".quizzList");
+	quizzSpace.innerHTML = "";
+
+	for (let i = 0; i < quizzList1.length; i++) {
+		let quizz = quizzList1[i];
+		quizzSpace.innerHTML += `
+            <div class="quizz-item" onclick="showQuizPage(this)">
+                <div class="image-bkg">
+                    <p id="quizz-title">
+                        ${quizz.title}
+                    </p>
+                </div>
+            </div>
+        `;
+		const lastQuizz = quizzSpace.lastElementChild;
+		lastQuizz.id = quizz.id;
+		lastQuizz.style.backgroundImage = `url(${quizz.image})`;
+	}
+}

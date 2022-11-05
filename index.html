@@ -26,41 +26,37 @@
 <body>
 
     <section id="page1"> <!--page inicial feita pela Claudia-->
+
         <header>
             <p class="header-title">BuzzQuizz</p>
         </header>
 
-        <section class="makeQuizz">
+        <div class="paginaInicial1">
 
-                <p class="aunt1">Você não criou nenhum quizz ainda :(</p>
-
-                <button id="loadMoreButton" type="button">
-                    Criar Quizz
-                </button>
+            <div class="caixa-sem-quizz">
+                <p>Você não criou nenhum </br> quizz ainda :(</p>
+                <button>Criar Quizz</button>
             </div>
+    
+            <div class="seus-quizzes escondido">
+                <div class="title-iconc"><span class="titulo">Seus Quizzes</span>
+                    <ion-icon class="add-quizz" name="add-circle"></ion-icon>
+                </div>
 
-        </section>
+                <ul class="yourQuizzes">
+                </ul>   
 
-
-        <section class="allQuizzes">
-
-            <p class="aunt2">Todos os Quizzes</p>
-            <div>
-                <ol id="quizzList" >
-                    <!-- ..... Quizzes here ..... -->
-
-                    <il class="quiz">
-                        <img src="./imagens/frog.png">
-                        <p>lsalslslslslsslls</p>
-                      
-                    </il>
-                </ol>                         
             </div>
-        </section>
+    
+            <div class="todos-quizzes">
+                <span class="titulo">Todos os Quizzes</span>
 
-        <button id="loadMoreButton" type="button">
-            Load More
-        </button>
+                <ul class="allQuizzes">
+                </ul> 
+
+            </div>
+        </div>
+
 
     </section>
 
@@ -161,5 +157,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/script.js"></script>
+    <script src="./assets/load.js"></script>
 </body>
 </html>
