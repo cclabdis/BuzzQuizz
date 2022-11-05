@@ -243,9 +243,7 @@
                         <li><input type="url" placeholder="URL da imagem 3" class="input-box" /></li>
                     </ul>
                 </div>
-                <div class="div-do-butao">
-                    <button onclick="perguntas_para_niveis()">Prosseguir para criar níveis</button>
-                </div>
+
             </div>
         </section>
         <section class="criacao-niveis escondidos-pag-3">
@@ -254,16 +252,31 @@
             </div>
             <div class="corpo-pag3">
                 <p>Agora, decida os níveis</p>
-                <ul class="list-criacao-niveis">
-                    <p>Nível 1</p>
-                    <li><input type="text" placeholder="Título do nível" class="input-box" /></li>
-                    <li><input type="number" placeholder="% de acerto mínima" class="input-box" /></li>
-                    <li><input type="url" placeholder="URL da imagem do nível" class="input-box" /></li>
-                    <li><input type="text" placeholder="Descrição do nível" class="input-box" /></li>
-                </ul>
-                <div class="div-do-butao">
-                    <button>Finalizar quizz</button>
+                <div class="list-criacao-niveis">
+                    <div>
+                        <p>Nível 1</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+                    <ul>
+                        <li><input type="text" placeholder="Título do nível" class="input-box" /></li>
+                        <li><input type="number" placeholder="% de acerto mínima" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem do nível" class="input-box" /></li>
+                        <li><input type="text" placeholder="Descrição do nível" class="input-box" /></li>
+                    </ul>
                 </div>
+                <div class="list-criacao-niveis">
+                    <div>
+                        <p>Nível 2</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+                    <ul class="escondidos-pag-3">
+                        <li><input type="text" placeholder="Título do nível" class="input-box" /></li>
+                        <li><input type="number" placeholder="% de acerto mínima" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem do nível" class="input-box" /></li>
+                        <li><input type="text" placeholder="Descrição do nível" class="input-box" /></li>
+                    </ul>
+                </div>
+
 
 
 

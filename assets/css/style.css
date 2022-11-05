@@ -179,12 +179,6 @@ section {
 
 }
 
-.criacao-niveis .corpo-pag3 div {
-
-    margin-top: 30px;
-
-}
-
 .corpo-pag3 {
     padding-top: 120px;
     background-color: #FAFAFA;
@@ -233,6 +227,22 @@ section {
 }
 
 .list-criacao-perguntas {
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background-color: #FFFFFF;
+    padding: 5px 30px 5px 16px;
+    width: 600px;
+
+}
+
+.list-criacao-niveis div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list-criacao-niveis {
     margin: auto;
     margin-top: 25px;
     margin-bottom: 25px;
