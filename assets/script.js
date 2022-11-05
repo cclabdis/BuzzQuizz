@@ -105,9 +105,19 @@ function infos_para_perguntas() {
         const elemento = document.querySelector(".criacao-perguntas");
         const elemento2 = document.querySelector(".criacao-info-base");
         elemento.classList.toggle("escondidos-pag-3")
+        carregar_pag_2();
         elemento2.classList.toggle("escondidos-pag-3")
+
     } else {
         alert("Por favor, preencha os dados corretamente!")
     }
 
+}
+
+function carregar_pag_2() {
+
+}
+
+function mostrar_esconder(elemento) {
+    elemento.parentElement.parentElement.childNodes[3].classList.toggle('escondidos-pag-3');
 }

@@ -163,7 +163,7 @@
             </div>
             <div class="corpo-pag3">
                 <p>Comece pelo começo</p>
-                <ul>
+                <ul class="list-info-base">
                     <li><input type="text" placeholder="Título do seu quizz" class="input-box" /></li>
                     <li><input type="url" placeholder="URL da imagem do seu quizz" class="input-box" /></li>
                     <li><input type="number" placeholder="Quantidade de perguntas do quizz" class="input-box" /></li>
@@ -181,22 +181,68 @@
             </div>
             <div class="corpo-pag3">
                 <p>Crie suas perguntas</p>
-                <ul class="list-criacao-perguntas">
-                    <p>Pergunta 1</p>
-                    <li><input type="text" placeholder="Texto da pergunta" class="input-box" /></li>
-                    <li><input type="text" placeholder="Cor de fundo da pergunta" class="input-box" /></li>
-                    <p>Resposta correta</p>
-                    <li><input type="text" placeholder="Resposta correta" class="input-box" /></li>
-                    <li><input type="url" placeholder="URL da imagem" class="input-box" /></li>
-                    <p>Respostas incorretas</p>
-                    <li><input type="text" placeholder="Resposta incorreta 1" class="input-box" /></li>
-                    <li><input type="url" placeholder="URL da imagem 1" class="input-box separacao" /></li>
-                    <li><input type="text" placeholder="Resposta incorreta 2" class="input-box" /></li>
-                    <li><input type="url" placeholder="URL da imagem 2" class="input-box separacao" /></li>
-                    <li><input type="text" placeholder="Resposta incorreta 3" class="input-box" /></li>
-                    <li><input type="url" placeholder="URL da imagem 3" class="input-box" /></li>
+                <div class="list-criacao-perguntas">
+                    <div>
+                        <p>Pergunta 1</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
 
-                </ul>
+                    <ul>
+                        <li><input type=" text" placeholder="Texto da pergunta" class="input-box" />
+                        </li>
+                        <li><input type="text" placeholder="Cor de fundo da pergunta" class="input-box" /></li>
+                        <p>Resposta correta</p>
+                        <li><input type="text" placeholder="Resposta correta" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem" class="input-box" /></li>
+                        <p>Respostas incorretas</p>
+                        <li><input type="text" placeholder="Resposta incorreta 1" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 1" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 2" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 2" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 3" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 3" class="input-box" /></li>
+                    </ul>
+                </div>
+                <div class="list-criacao-perguntas">
+                    <div>
+                        <p>Pergunta 2</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+                    <ul class="escondidos-pag-3">
+                        <li><input type="text" placeholder="Texto da pergunta" class="input-box" /></li>
+                        <li><input type="text" placeholder="Cor de fundo da pergunta" class="input-box" /></li>
+                        <p>Resposta correta</p>
+                        <li><input type="text" placeholder="Resposta correta" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem" class="input-box" /></li>
+                        <p>Respostas incorretas</p>
+                        <li><input type="text" placeholder="Resposta incorreta 1" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 1" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 2" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 2" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 3" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 3" class="input-box" /></li>
+                    </ul>
+                </div>
+                <div class="list-criacao-perguntas">
+                    <div>
+                        <p>Pergunta 3</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+                    <ul class="escondidos-pag-3">
+                        <li><input type="text" placeholder="Texto da pergunta" class="input-box" /></li>
+                        <li><input type="text" placeholder="Cor de fundo da pergunta" class="input-box" /></li>
+                        <p>Resposta correta</p>
+                        <li><input type="text" placeholder="Resposta correta" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem" class="input-box" /></li>
+                        <p>Respostas incorretas</p>
+                        <li><input type="text" placeholder="Resposta incorreta 1" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 1" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 2" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 2" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 3" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 3" class="input-box" /></li>
+                    </ul>
+                </div>
                 <div class="div-do-butao">
                     <button onclick="perguntas_para_niveis()">Prosseguir para criar níveis</button>
                 </div>
