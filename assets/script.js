@@ -1,25 +1,25 @@
-function clickAnswer(){
-alert('clicada');
+function clickAnswer() {
+    alert('clicada');
 
 };
 
-function getQuizzes(){
+function getQuizzes() {
     const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1');
     promise.then(quizzTemplate);
 }
 
 
-function quizzTemplate(response){
+function quizzTemplate(response) {
 
     console.log(response);
     const quizz = response.data;
-    
+
 
     const template = document.querySelector('main');
 
     //template.innerHTML = '';
 
-    for(let i = 0; i < quizz.length; i++){
+    for (let i = 0; i < quizz.length; i++) {
 
         let quizzElement = quizz[i];
 
@@ -62,20 +62,20 @@ function quizzTemplate(response){
         template.innerHTML += layoutTemplate;
     }
 
-    
+
 }
 
 function renderQuizzes(answer) {
-	const quizzList1 = answer.data;
+    const quizzList1 = answer.data;
 
-	console.log(quizzList1);
+    console.log(quizzList1);
 
-	const quizzSpace = document.querySelector(".quizzList");
-	quizzSpace.innerHTML = "";
+    const quizzSpace = document.querySelector(".quizzList");
+    quizzSpace.innerHTML = "";
 
-	for (let i = 0; i < quizzList1.length; i++) {
-		let quizz = quizzList1[i];
-		quizzSpace.innerHTML += `
+    for (let i = 0; i < quizzList1.length; i++) {
+        let quizz = quizzList1[i];
+        quizzSpace.innerHTML += `
             <div class="quizz-item" onclick="showQuizPage(this)">
                 <div class="image-bkg">
                     <p id="quizz-title">
@@ -84,8 +84,30 @@ function renderQuizzes(answer) {
                 </div>
             </div>
         `;
-		const lastQuizz = quizzSpace.lastElementChild;
-		lastQuizz.id = quizz.id;
-		lastQuizz.style.backgroundImage = `url(${quizz.image})`;
-	}
+        const lastQuizz = quizzSpace.lastElementChild;
+        lastQuizz.id = quizz.id;
+        lastQuizz.style.backgroundImage = `url(${quizz.image})`;
+    }
+}
+
+/*Parte Gustavo*/
+
+let titulo_do_quizz, url_do_quizz, n_de_perguntas, n_de_niveis;
+
+function infos_para_perguntas() {
+    const elemento = document.querySelectorAll(".input-box");
+    titulo_do_quizz = elemento[0].value;
+    url_do_quizz = elemento[1].value;
+    n_de_perguntas = elemento[2].value;
+    n_de_niveis = elemento[3].value;
+
+    if (titulo_do_quizz.length < 65 && titulo_do_quizz.length > 20 && n_de_niveis >= 2 && n_de_perguntas >= 3) {
+        const elemento = document.querySelector(".criacao-perguntas");
+        const elemento2 = document.querySelector(".criacao-info-base");
+        elemento.classList.toggle("escondidos-pag-3")
+        elemento2.classList.toggle("escondidos-pag-3")
+    } else {
+        alert("Por favor, preencha os dados corretamente!")
+    }
+
 }
