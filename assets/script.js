@@ -655,3 +655,4 @@ function perguntas_para_niveis() {
     function mostrar_esconder(elemento) {
         elemento.parentElement.parentElement.childNodes[3].classList.toggle('escondidos-pag-3');
     }
+}
