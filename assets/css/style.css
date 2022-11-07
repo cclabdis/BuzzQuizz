@@ -92,7 +92,7 @@ section {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-   
+
 }
 
 .question-title {
@@ -107,7 +107,8 @@ section {
     margin-top: 20px;
 }
 
-.quizz-result-title, .question-title{
+.quizz-result-title,
+.question-title {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -282,6 +283,26 @@ section {
 
 }
 
+.criacao-pagina-final .corpo-pag3 img {
+    margin: auto;
+    width: 500px;
+    margin-top: 35px;
+
+    position: relative;
+}
+
+.imagem-final p {
+    position: absolute;
+    left: 25px;
+    bottom: 20px;
+    color: #FFFFFF;
+    font-family: Roboto;
+    font-size: 23px;
+    font-weight: 400;
+
+
+}
+
 ion-icon {
     font-size: 25px;
 }
@@ -292,12 +313,93 @@ ion-icon {
     margin-top: 70px;
 }
 
+.div-do-butao-voltar-home {
+    width: 220px;
+    margin: auto;
+    margin-top: 9px;
+    background-color: inherit;
+    color: #818181;
+
+}
+
+.criacao-pagina-final .corpo-pag3 button {
+
+    width: 220px;
+    height: 44px;
+    border: none;
+    border-radius: 15px;
+
+    color: #FFF5F4;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    text-align: center;
+
+}
+
+.criacao-pagina-final .corpo-pag3 .div-do-butao {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.criacao-pagina-final .corpo-pag3 .div-do-butao-voltar-home button {
+
+    background-color: inherit;
+    color: #818181;
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: 400;
+    text-align: center;
+}
+
+
 .escondidos-pag-3 {
     display: none;
 }
 
 
+.imagem-final {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+    width: 500px;
+}
 
 .separacao {
     margin-bottom: 30px;
+}
+
+@media (max-width: 1100px) {
+    .list-info-base {
+        width: 100vw;
+        padding: 20px 18px 24px 16px;
+    }
+
+    .list-info-base input {
+        max-width: 100%;
+    }
+
+    .list-criacao-perguntas {
+        width: 100vw;
+        padding: 20px 18px 24px 16px;
+    }
+
+    .list-criacao-perguntas input {
+        max-width: 100%;
+    }
+
+    .list-criacao-niveis {
+        width: 100vw;
+        padding: 20px 18px 24px 16px;
+    }
+
+    .list-criacao-niveis input {
+        max-width: 100%;
+    }
+
+    .imagem-final {
+        width: 80vw;
+    }
 }
