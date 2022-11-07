@@ -17,93 +17,33 @@
     />
 </head>
 <body>
-    <div>
+    <div class="container">
         <header>
             <p class="header-title">BuzzQuizz</p>
         </header>
 
-        <main>
+        <main>        
+        </main>   
 
-            <nav class="quizz-main">
-                <img class="img-title" src="./imagens/quizz1.png">
-                <p class="quizz-title">O quão Potterhead é você?</p>
-            </nav>
-
-            <section class="questions">
-
-                <div class="question-quizz">
-                    <p class="question-title">
-                        Em qual animal Olho-Tonto Moody transfigurou Malfoy?
-                    </p>
-                    
-                    <div class="question-answer">
-                        <div class="option1" onclick="clickAnswer(this)">
-                            <img class="img-question" src="./imagens/cat.png" >
-                            <p class="text-answer">Gatíneo</p>
-                        </div>
-                        <div class="option2" onclick="clickAnswer(this)">
-                            <img class="img-question" src="./imagens/frog.png" >
-                            <p class="text-answer">Gatíneo</p>
-                        </div>
-                        <div class="option3" onclick="clickAnswer(this)">
-                            <img class="img-question" src="./imagens/mouse.png" >
-                            <p class="text-answer">Gatíneo</p>
-                        </div>
-                        <div class="option4" onclick="clickAnswer(this)">
-                            <img class="img-question" src="./imagens/furão.png" >
-                            <p class="text-answer">Gatíneo</p>
-                        </div>
-                    </div>
+        <section class="results">
+            <div class="results-box">
+                <div class="results-title">
+                    <p class="quizz-result-title">88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
                 </div>
-
-                <div class="question-quizz">
-                    <p class="question-title">
-                        Qual dos objetos abaixo NÃO é uma horcrux?
-                    </p>
-                    
-                    <div class="question-answer" onclick="clickAnswer(this)">
-                        <div class="option1">
-                            <img class="img-question" src="./imagens/cat.png" >
-                            <p class="text-answer">The boy who lived</p>
-                        </div>
-                        <div class="option2" onclick="clickAnswer(this)">
-                            <img class="img-question" src="./imagens/frog.png" >
-                            <p class="text-answer">Anel velho</p>
-                        </div>
-                        <div class="option3" onclick="clickAnswer(this)">
-                            <img class="img-question" src="./imagens/mouse.png" >
-                            <p class="text-answer">O livro monstruoso dos monstros</p>
-                        </div>
-                        <div class="option4" onclick="clickAnswer(this)">
-                            <img class="img-question" src="./imagens/furão.png" >
-                            <p class="text-answer">Diadema da Ravenclaw</p>
-                        </div>
-                    </div>
-                
+                <div class="results-score">
+                    <img class="img-result" src="./imagens/result.png">
+                    <p class="text-result">Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</p>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section class="results">
-                <div>
-                    <div class="results-title">
-                        <p class="quizz-title">88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
-                    </div>
-                    <div>
-                        <img class="img-result" src="./imagens/result.png">
-                        <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</p>
-                    </div>
-                </div>
-            </section>
+        <button class="restart-quizz" onclick="restartQuizz()">
+            Reiniciar Quizz
+        </button>
 
-            <button class="restart-quizz" onclick="restartQuizz()">
-                Reiniciar Quizz
-            </button>
-
-            <button class="back-home" onclick="backHome()">
-                Voltar pra home 
-            </button>
-        
-        </main>    
+        <button class="back-home" onclick="backHome()">
+            Voltar pra home 
+        </button>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
