@@ -26,7 +26,7 @@
 
 <body>
 
-    <section id="page1" >
+    <section id="page1" class="claudia">
         <!--page inicial feita pela Claudia-->
 
         <header>
@@ -37,7 +37,7 @@
 
             <div class="caixa-sem-quizz">
                 <p>Você não criou nenhum </br> quizz ainda :(</p>
-                <button>Criar Quizz</button>
+                <button onclick="carregaTela3()">Criar Quizz</button>
             </div>
 
             <div class="seus-quizzes escondido">
@@ -63,7 +63,7 @@
     </section>
 
 
-    <section id="page2" class="escondido">
+    <section id="page2" class="escondido rafa">
         <!--página feita pela Rafa-->
         <header>
             <p class="header-title">BuzzQuizz</p>
@@ -85,9 +85,9 @@
                 </div>
             </section>
 
-            <div class="central">
+            <div class="central escondido">
 
-                <section class="results">
+                <section class="results escondido">
                     <div>
                         <div class="results-title">
                             <p class="quizz-title">88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
@@ -103,18 +103,18 @@
                 <button class="restart-quizz" onclick="restartQuizz()">
                     Reiniciar Quizz
                 </button>
-
+            </div>
                 <button class="back-home" onclick="backHome()">
                     Voltar pra home
                 </button>
 
-            </div>
+            
 
         </main>
     </section>
 
 
-    <section id="page3" class="escondido">
+    <section id="page3" class="escondido gustavo">
         <!--página a ser feita pelo gustavo-->
         <section class="criacao-info-base">
             <div class="cabecalho-pag3">
@@ -258,6 +258,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/script.js"></script>
     <script src="./assets/load.js"></script>
+    <script src="./assets/transicao.js"></script>
 </body>
 
 </html>
