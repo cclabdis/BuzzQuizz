@@ -16,7 +16,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1;
+    z-index: 2;
     position: sticky;
     top: 0px;
     left: 0px;
@@ -41,7 +41,9 @@ nav {
 }
 
 .img-title {
-    width: auto;
+    width: 1140px;
+    height: 227px;
+    object-fit: cover;
     position: absolute;
     opacity: 0.6;
 }
@@ -129,9 +131,16 @@ section {
 }
 
 #page2 {
-    display: none;
+    display: flex;
 }
 
+.opacity{
+    opacity: 0.5;
+}
+
+.noopacity{
+    opacity: 1;
+}
 
 /* PARTE GUSTAVO*/
 #page3 {

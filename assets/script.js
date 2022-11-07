@@ -1,31 +1,15 @@
-function clickAnswer() {
-    alert('clicada');
+let answerSelected = [];
+let linkGetQuizz = 'https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/';
+let quizzElement, numberOfQuestions, numberOfAnswers;;
 
+function clickAnswer(click) {
+    const quizzClicado = click.id;
+    console.log(quizzClicado);
 
-
-function clickAnswer(choice){
-   //adicionar a opacidade na opção selecionada
-   choice.classList.add('noopacity');
-
-   answerSelected.push(choice);
-   console.log (answerSelected);
-
-   for(let i = 0; i < answerSelected.length ; i++){
-    if(answerSelected[0].children[0] !== this){
-        choice.classList.add('opacity');
-    }
-   }
-   
-   
-   //if(answerSelected[0].classList[0] == ('option2')){
-    //choice.querySelector('.option1').classList.add('opacity');
-};
-
-function getQuizzes() {
-    const promise = axios.get('https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/1');
+    const promise = axios.get(`${linkGetQuizz}${quizzClicado}`);
+    console.log(promise);
     promise.then(quizzTemplate);
-}
-getQuizzes();
+};
 
 //função resposável por embaralhar as respostas
 function quizzRandomAnswers() {
@@ -36,87 +20,224 @@ function quizzRandomAnswers() {
 function quizzTemplate(response) {
 
     const quizz = response.data;
+    console.log(quizz);
 
+    numberOfQuestions = quizz.questions.length;
+    console.log(numberOfQuestions);
+
+    let i = 0;
+    numberOfAnswers = quizz.questions[i].answers.length;
+    console.log(numberOfAnswers);
+    
     const template = document.querySelector('main');
     console.log(template);
 
-    for (let i = 0; i < quizz.length; i++) {
+    template.innerHTML = '';
 
-        quizzElement = quizz[i];
+    //número de perguntas < 4 e respostas < 3
+    if(numberOfQuestions === 3 && numberOfAnswers === 2){
+
+        for (let i = 0; i < numberOfQuestions; i++) {
+
+            quizzElement = quizz;
+            
+            let layoutTemplate = `
+                <nav class="quizz-main">
+                    <img class="img-title" src=${quizzElement.image}>
+                    <p class="quizz-title">${quizzElement.title}</p>
+                </nav>
         
-        let layoutTemplate = `
-            <nav class="quizz-main">
-                <img class="img-title" src=${quizzElement.image}>
-                <p class="quizz-title">${quizzElement.title}</p>
-            </nav>
-    
-            <section class="questions">
+                <section class="questions">
+            
+                    <div class="question-quizz">
+                        <p class="question-title" style="background-color: ${quizzElement.questions[i].color};">
+                            ${quizzElement.questions[i].title}
+                        </p>
+                        
+                        <div class="question-answer">
+                            <div class="option1" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[0].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[0].text}</p>
+                            </div>
+                            <div class="option2" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[1].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[1].text}</p>
+                            </div>
+                            
+                        </div>
+                    </div>              
+                </section>    
+            `;
         
-                <div class="question-quizz">
-                    <p class="question-title" style="background-color: ${quizzElement.questions[0].color};">
-                        ${quizzElement.questions[0].title}
-                    </p>
-                    
-                    <div class="question-answer">
-                        <div class="option1" onclick="clickAnswer(this)">
-                            <img class="img-question" src="${quizzElement.questions[0].answers[0].image}" >
-                            <p class="text-answer">${quizzElement.questions[0].answers[0].text}</p>
-                        </div>
-                        <div class="option2" onclick="clickAnswer(this)">
-                            <img class="img-question" src="${quizzElement.questions[0].answers[1].image}" >
-                            <p class="text-answer">${quizzElement.questions[0].answers[1].text}</p>
-                        </div>
-                        
-                    </div>
-                </div>              
+            template.innerHTML += layoutTemplate;
+            console.log(layoutTemplate);
+        };
 
-                <div class="question-quizz">
-                    <p class="question-title" style="background-color: ${quizzElement.questions[1].color};">
-                        ${quizzElement.questions[1].title}
-                    </p>
-                    
-                    <div class="question-answer">
-                        <div class="option1" onclick="clickAnswer(this)">
-                            <img class="img-question" src="${quizzElement.questions[1].answers[0].image}" >
-                            <p class="text-answer">${quizzElement.questions[1].answers[0].text}</p>
-                        </div>
-                        <div class="option2" onclick="clickAnswer(this)">
-                            <img class="img-question" src="${quizzElement.questions[1].answers[1].image}" >
-                            <p class="text-answer">${quizzElement.questions[1].answers[1].text}</p>
-                        </div>
-                        
-                    </div>
-                </div>   
-
-                <div class="question-quizz">
-                    <p class="question-title" style="background-color: ${quizzElement.questions[2].color};">
-                        ${quizzElement.questions[2].title}
-                    </p>
-                    
-                    <div class="question-answer">
-                        <div class="option1" onclick="clickAnswer(this)">
-                            <img class="img-question" src="${quizzElement.questions[2].answers[0].image}" >
-                            <p class="text-answer">${quizzElement.questions[2].answers[0].text}</p>
-                        </div>
-                        <div class="option2" onclick="clickAnswer(this)">
-                            <img class="img-question" src="${quizzElement.questions[2].answers[1].image}" >
-                            <p class="text-answer">${quizzElement.questions[2].answers[1].text}</p>
-                        </div>
-                        
-                    </div>
-                </div>   
-
-            </section>    
-        `;
+    }; 
     
-        template.innerHTML += layoutTemplate;
-        console.log(layoutTemplate);
+    if(numberOfQuestions === 3 && numberOfAnswers === 3){
+
+        for (let i = 0; i < numberOfQuestions; i++) {
+
+            quizzElement = quizz;
+            
+            let layoutTemplate = `
+                <nav class="quizz-main">
+                    <img class="img-title" src=${quizzElement.image}>
+                    <p class="quizz-title">${quizzElement.title}</p>
+                </nav>
+        
+                <section class="questions">
+            
+                    <div class="question-quizz">
+                        <p class="question-title" style="background-color: ${quizzElement.questions[i].color};">
+                            ${quizzElement.questions[i].title}
+                        </p>
+                        
+                        <div class="question-answer">
+                            <div class="option1" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[0].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[0].text}</p>
+                            </div>
+                            <div class="option2" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[1].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[1].text}</p>
+                            </div>
+                            <div class="option3" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[2].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[2].text}</p>
+                            </div>
+                            
+                        </div>
+                    </div>              
+                </section>    
+            `;
+        
+            template.innerHTML += layoutTemplate;
+            console.log(layoutTemplate);
+        };
+
+    }; 
+    
+    if(numberOfQuestions === 3 && numberOfAnswers === 4){
+
+        for (let i = 0; i < numberOfQuestions; i++) {
+
+            quizzElement = quizz;
+            
+            let layoutTemplate = `
+                <nav class="quizz-main">
+                    <img class="img-title" src=${quizzElement.image}>
+                    <p class="quizz-title">${quizzElement.title}</p>
+                </nav>
+        
+                <section class="questions">
+            
+                    <div class="question-quizz">
+                        <p class="question-title" style="background-color: ${quizzElement.questions[i].color};">
+                            ${quizzElement.questions[i].title}
+                        </p>
+                        
+                        <div class="question-answer">
+                            <div class="option1" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[0].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[0].text}</p>
+                            </div>
+                            <div class="option2" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[1].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[1].text}</p>
+                            </div>
+                            <div class="option3" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[2].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[2].text}</p>
+                            </div>
+                            <div class="option4" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[3].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[3].text}</p>
+                            </div>
+                            
+                        </div>
+                    </div>              
+                </section>    
+            `;
+        
+            template.innerHTML += layoutTemplate;
+            console.log(layoutTemplate);
+        };
     };
+
+    if(numberOfQuestions === 4 && numberOfAnswers === 4){
+        for (let i = 0; i < numberOfQuestions; i++) {
+
+            quizzElement = quizz;
+            
+            let layoutTemplate = `
+                <nav class="quizz-main">
+                    <img class="img-title" src=${quizzElement.image}>
+                    <p class="quizz-title">${quizzElement.title}</p>
+                </nav>
+        
+                <section class="questions">
+            
+                    <div class="question-quizz">
+                        <p class="question-title" style="background-color: ${quizzElement.questions[i].color};">
+                            ${quizzElement.questions[i].title}
+                        </p>
+                        
+                        <div class="question-answer">
+                            <div class="option1" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[0].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[0].text}</p>
+                            </div>
+                            <div class="option2" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[1].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[1].text}</p>
+                            </div>
+                            <div class="option3" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[2].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[2].text}</p>
+                            </div>
+                            <div class="option4" onclick="quizzSelected(this)">
+                                <img class="img-question" src="${quizzElement.questions[i].answers[3].image}" >
+                                <p class="text-answer">${quizzElement.questions[i].answers[3].text}</p>
+                            </div>
+                            
+                        </div>
+                    </div>              
+                </section>    
+            `;
+        
+            template.innerHTML += layoutTemplate;
+            console.log(layoutTemplate);
+        };
+    }
 
     //gerar respostas das respectivas perguntas embaralhadas
-    for(let i = 0; i < quizzElement.questions.length; i++){
+    /*for(let i = 0; i < quizzElement.questions.length; i++){
         quizzElement.questions[i].answers.sort(quizzRandomAnswers);
+    };*/
+
+};
+
+function quizzSelected(choice){
+   //adicionar a opacidade na opção selecionada
+   choice.classList.add('noopacity');
+   answerSelected.push(choice);
+   console.log(answerSelected);
+
+   let teste = document.querySelector('.question-answer');
+   console.log(teste);
+
+   let teste_2 = teste.parentNode.children;
+   console.log(teste_2);
+  
+
+   for(let i = 0; i < teste.length; i++){
+        if(teste_2[1].children[1] !== choice[0].classList[0]){
+            teste[i].classList.add('opacity');
+        };
     };
+
 
 };
 
