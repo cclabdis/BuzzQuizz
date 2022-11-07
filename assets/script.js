@@ -17,22 +17,22 @@ function quizzRandomAnswers() {
 };
 
 
-    function quizzTemplate(response) {
+function quizzTemplate(response) {
 
-    const quizz = response.data;
-    console.log(quizz);
+const quizz = response.data;
+console.log(quizz);
 
-    numberOfQuestions = quizz.questions.length;
-    console.log(numberOfQuestions);
+numberOfQuestions = quizz.questions.length;
+console.log(numberOfQuestions);
 
-    let i = 0;
-    numberOfAnswers = quizz.questions[i].answers.length;
-    console.log(numberOfAnswers);
-    
-    const template = document.querySelector('main');
-    console.log(template);
+let i = 0;
+numberOfAnswers = quizz.questions[i].answers.length;
+console.log(numberOfAnswers);
 
-    template.innerHTML = '';
+const template = document.querySelector('main');
+console.log(template);
+
+template.innerHTML = '';
 
     //número de perguntas < 4 e respostas < 3
     if(numberOfQuestions === 3 && numberOfAnswers === 2){

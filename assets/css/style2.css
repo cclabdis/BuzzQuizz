@@ -146,8 +146,10 @@
   }
 
   .escondido {
-    display: none;
+     display: none;
   }
+
+   
   @media (max-width: 1100px) {
     /*Responsivo TELA INICIAL*/
     .paginaInicial1> .todos-quizzes,

@@ -8,7 +8,7 @@ function carregaTela3(){
     page3.classList.remove('escondido')
 }
 
-function clicado(elemento){
+function baitclicado(elemento){
 
     BuscarQuizz = axios.get(`https://mock-api.driven.com.br/api/v4/buzzquizz/quizzes/${elemento.id}`)
 

@@ -131,9 +131,6 @@ section {
     align-items: center;
 }
 
-#page2 {
-    display: flex;
-}
 
 .opacity{
     opacity: 0.5;
@@ -144,9 +141,6 @@ section {
 }
 
 /* PARTE GUSTAVO*/
-#page3 {
-    display: none;
-}
 
 .cabecalho-pag3 {
     height: 69px;
