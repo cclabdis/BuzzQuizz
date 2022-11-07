@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,17 +8,63 @@
     <title>BuzzQuizz</title>
 
     <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/global.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style2.css">
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link 
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" 
-        rel="stylesheet"
-    />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet" />
 </head>
+
 <body>
-    <div class="container">
+
+    <section id="page1">
+        <!--page inicial feita pela Claudia-->
+
+        <header>
+            <p class="header-title">BuzzQuizz</p>
+        </header>
+
+        <div class="paginaInicial1">
+
+            <div class="caixa-sem-quizz">
+                <p>Você não criou nenhum </br> quizz ainda :(</p>
+                <button>Criar Quizz</button>
+            </div>
+
+            <div class="seus-quizzes escondido">
+                <div class="title-iconc"><span class="titulo">Seus Quizzes</span>
+                    <ion-icon class="add-quizz" name="add-circle"></ion-icon>
+                </div>
+
+                <ul class="yourQuizzes">
+                </ul>
+
+            </div>
+
+            <div class="todos-quizzes">
+                <span class="titulo">Todos os Quizzes</span>
+
+                <ul class="allQuizzes">
+                </ul>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+    <section id="page2">
+        <!--página feita pela Rafa-->
         <header>
             <p class="header-title">BuzzQuizz</p>
         </header>
@@ -25,28 +72,235 @@
         <main>        
         </main>   
 
-        <section class="results">
-            <div class="results-box">
-                <div class="results-title">
-                    <p class="quizz-result-title">88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
+            <nav class="quizz-main">
+                <img class="img-title" src="./imagens/quizz1.png">
+                <p class="quizz-title">O quão Potterhead é você?</p>
+            </nav>
+
+            <section class="questions">
+
+                <div class="question-quizz">
+                    <p class="question-title">
+                        Em qual animal Olho-Tonto Moody transfigurou Malfoy?
+                    </p>
+
+                    <div class="question-answer">
+                        <div class="option1" onclick="clickAnswer(this)">
+                            <img class="img-question" src="./imagens/cat.png">
+                            <p class="text-answer">Gatíneo</p>
+                        </div>
+                        <div class="option2" onclick="clickAnswer(this)">
+                            <img class="img-question" src="./imagens/frog.png">
+                            <p class="text-answer">Gatíneo</p>
+                        </div>
+                        <div class="option3" onclick="clickAnswer(this)">
+                            <img class="img-question" src="./imagens/mouse.png">
+                            <p class="text-answer">Gatíneo</p>
+                        </div>
+                        <div class="option4" onclick="clickAnswer(this)">
+                            <img class="img-question" src="./imagens/furão.png">
+                            <p class="text-answer">Gatíneo</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="results-score">
-                    <img class="img-result" src="./imagens/result.png">
-                    <p class="text-result">Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no botão abaixo para usar o vira-tempo e reiniciar este teste.</p>
+
+                <div class="question-quizz">
+                    <p class="question-title">
+                        Qual dos objetos abaixo NÃO é uma horcrux?
+                    </p>
+
+                    <div class="question-answer" onclick="clickAnswer(this)">
+                        <div class="option1">
+                            <img class="img-question" src="./imagens/cat.png">
+                            <p class="text-answer">The boy who lived</p>
+                        </div>
+                        <div class="option2" onclick="clickAnswer(this)">
+                            <img class="img-question" src="./imagens/frog.png">
+                            <p class="text-answer">Anel velho</p>
+                        </div>
+                        <div class="option3" onclick="clickAnswer(this)">
+                            <img class="img-question" src="./imagens/mouse.png">
+                            <p class="text-answer">O livro monstruoso dos monstros</p>
+                        </div>
+                        <div class="option4" onclick="clickAnswer(this)">
+                            <img class="img-question" src="./imagens/furão.png">
+                            <p class="text-answer">Diadema da Ravenclaw</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <button class="restart-quizz" onclick="restartQuizz()">
-            Reiniciar Quizz
-        </button>
+            <section class="results">
+                <div>
+                    <div class="results-title">
+                        <p class="quizz-title">88% de acerto: Você é praticamente um aluno de Hogwarts!</p>
+                    </div>
+                    <div>
+                        <img class="img-result" src="./imagens/result.png">
+                        <p>Parabéns Potterhead! Bem-vindx a Hogwarts, aproveite o loop infinito de comida e clique no
+                            botão abaixo para usar o vira-tempo e reiniciar este teste.</p>
+                    </div>
+                </div>
+            </section>
 
-        <button class="back-home" onclick="backHome()">
-            Voltar pra home 
-        </button>
-    </div>
-    
+            <button class="restart-quizz" onclick="restartQuizz()">
+                Reiniciar Quizz
+            </button>
+
+            <button class="back-home" onclick="backHome()">
+                Voltar pra home
+            </button>
+
+        </main>
+    </section>
+
+
+    <section id="page3">
+        <!--página a ser feita pelo gustavo-->
+        <section class="criacao-info-base">
+            <div class="cabecalho-pag3">
+                <p>BuzzQuizz</p>
+            </div>
+            <div class="corpo-pag3">
+                <p>Comece pelo começo</p>
+                <ul class="list-info-base">
+                    <li><input type="text" placeholder="Título do seu quizz" class="input-box" /></li>
+                    <li><input type="url" placeholder="URL da imagem do seu quizz" class="input-box" /></li>
+                    <li><input type="number" placeholder="Quantidade de perguntas do quizz" class="input-box" /></li>
+                    <li><input type="number" placeholder="Quantidade de níveis do quizz" class="input-box" /></li>
+                </ul>
+                <div class="div-do-butao">
+                    <button onclick="infos_para_perguntas()">Prosseguir para criar perguntas</button>
+                </div>
+
+            </div>
+        </section>
+        <section class="criacao-perguntas escondidos-pag-3">
+            <div class="cabecalho-pag3">
+                <p>BuzzQuizz</p>
+            </div>
+            <div class="corpo-pag3">
+                <p>Crie suas perguntas</p>
+                <div class="list-criacao-perguntas">
+                    <div>
+                        <p>Pergunta 1</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+
+                    <ul>
+                        <li><input type=" text" placeholder="Texto da pergunta" class="input-box" />
+                        </li>
+                        <li><input type="text" placeholder="Cor de fundo da pergunta" class="input-box" /></li>
+                        <p>Resposta correta</p>
+                        <li><input type="text" placeholder="Resposta correta" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem" class="input-box" /></li>
+                        <p>Respostas incorretas</p>
+                        <li><input type="text" placeholder="Resposta incorreta 1" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 1" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 2" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 2" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 3" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 3" class="input-box" /></li>
+                    </ul>
+                </div>
+                <div class="list-criacao-perguntas">
+                    <div>
+                        <p>Pergunta 2</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+                    <ul class="escondidos-pag-3">
+                        <li><input type="text" placeholder="Texto da pergunta" class="input-box" /></li>
+                        <li><input type="text" placeholder="Cor de fundo da pergunta" class="input-box" /></li>
+                        <p>Resposta correta</p>
+                        <li><input type="text" placeholder="Resposta correta" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem" class="input-box" /></li>
+                        <p>Respostas incorretas</p>
+                        <li><input type="text" placeholder="Resposta incorreta 1" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 1" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 2" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 2" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 3" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 3" class="input-box" /></li>
+                    </ul>
+                </div>
+                <div class="list-criacao-perguntas">
+                    <div>
+                        <p>Pergunta 3</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+                    <ul class="escondidos-pag-3">
+                        <li><input type="text" placeholder="Texto da pergunta" class="input-box" /></li>
+                        <li><input type="text" placeholder="Cor de fundo da pergunta" class="input-box" /></li>
+                        <p>Resposta correta</p>
+                        <li><input type="text" placeholder="Resposta correta" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem" class="input-box" /></li>
+                        <p>Respostas incorretas</p>
+                        <li><input type="text" placeholder="Resposta incorreta 1" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 1" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 2" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 2" class="input-box separacao" /></li>
+                        <li><input type="text" placeholder="Resposta incorreta 3" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem 3" class="input-box" /></li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+        <section class="criacao-niveis escondidos-pag-3">
+            <div class="cabecalho-pag3">
+                <p>BuzzQuizz</p>
+            </div>
+            <div class="corpo-pag3">
+                <p>Agora, decida os níveis</p>
+                <div class="list-criacao-niveis">
+                    <div>
+                        <p>Nível 1</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+                    <ul>
+                        <li><input type="text" placeholder="Título do nível" class="input-box" /></li>
+                        <li><input type="number" placeholder="% de acerto mínima" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem do nível" class="input-box" /></li>
+                        <li><input type="text" placeholder="Descrição do nível" class="input-box" /></li>
+                    </ul>
+                </div>
+                <div class="list-criacao-niveis">
+                    <div>
+                        <p>Nível 2</p>
+                        <ion-icon name="create-sharp" onclick="mostrar_esconder(this)"></ion-icon>
+                    </div>
+                    <ul class="escondidos-pag-3">
+                        <li><input type="text" placeholder="Título do nível" class="input-box" /></li>
+                        <li><input type="number" placeholder="% de acerto mínima" class="input-box" /></li>
+                        <li><input type="url" placeholder="URL da imagem do nível" class="input-box" /></li>
+                        <li><input type="text" placeholder="Descrição do nível" class="input-box" /></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="criacao-pagina-final escondidos-pag-3">
+            <div class="cabecalho-pag3">
+                <p>BuzzQuizz</p>
+            </div>
+            <div class="corpo-pag3">
+                <p>ULtima PAg</p>
+                <img src="https://static.nationalgeographicbrasil.com/files/styles/image_3200/public/image_10244e-mrk-1337.jpg?w=1600&h=900"
+                    width=100px>
+
+                <div class="div-do-butao">
+                    <button onclick="">Acessar Quizz</button>
+                </div>
+
+            </div>
+        </section>
+    </section>
+
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./assets/script.js"></script>
+    <script src="./assets/load.js"></script>
 </body>
+
 </html>
